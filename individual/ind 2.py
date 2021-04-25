@@ -14,12 +14,24 @@ i_min = 0
 # Пустой список для того чтобы запомнить элементы возведённые в квадрат
 neg_lst = [b for b in range(0, len(a))]
 
+
+
+# Проверяет, является ли числом
+def isDigit(x):
+    try:
+        float(x)
+        return True
+    except ValueError:
+        return False
+
+
+
 # Проходит по всем элементам массива
 for i, item in enumerate(a):
 
-    #if not a[i] <= 0 and a[i] > 0:
-    #    print("Не все элементы массива являются числами")
-    #    exit(1)
+    if not isDigit(a[i]):
+        print("Не все элементы массива являются числами", file=sys.stderr)
+        exit(1)
 
     # Считает отрицательные элементы и возводит их в квадрат
     if a[i] < 0:
