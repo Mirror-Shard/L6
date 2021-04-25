@@ -40,7 +40,7 @@ for i, item in enumerate(a):
         # Запоминает элементы возведённые в квадрат
         neg_lst[i] = a[i]
 
-    # Ищет минимальный элемент и возводит в квадрат элементы до него
+    # Ищет минимальный элемент
     if math.fabs(item) < a_min:
         i_min, a_min = i, math.fabs(item)
 
