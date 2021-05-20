@@ -12,7 +12,7 @@ summ = 0
 a_min = a[0]
 i_min = 0
 # Пустой список для того чтобы запомнить элементы возведённые в квадрат
-neg_lst = [b for b in range(0, len(a))]
+neg_lst = [b for b in enumerate(a, 0)]
 
 
 
@@ -47,11 +47,11 @@ for i, item in enumerate(a):
 
 # Проходит по элементам после минимального, считает их сумму и возводит в квадрат
 # оставшиеся элементы
-for i in range(i_min+1, len(a)):
+for i, item in enumerate(a, start=i_min+1):
     # Если элемент был возведён в квадрат, ищет его корень
-    if a[i] == neg_lst[i]:
-        a[i] = math.sqrt(a[i])
-    summ += math.fabs(a[i])
+    if a[1] == neg_lst[1]:
+        a[1] = math.sqrt(a[1])
+    summ += math.fabs(a[1])
 
 # Сортирует по возрастанию
 a.sort()
